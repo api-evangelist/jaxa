@@ -1,0 +1,45 @@
+rateLimits:
+  - api: JAXA Earth API
+    description: No documented rate limits. JAXA Earth API states there are currently no restrictions on user registration, API key issuance, or the number of API calls. The service is free of charge with no usage caps stated in public documentation.
+    url: https://data.earth.jaxa.jp/
+    requests: unlimited
+    period: none
+    keyRequired: false
+    registrationRequired: false
+    notes: No API key or registration required. Users are expected to comply with JAXA data use policies and cite data appropriately in publications.
+
+  - api: G-Portal Web API (CSW/WMS/WCS)
+    description: OGC web services for satellite data search and retrieval. No explicit rate limits documented. Free registration required for product downloads via the G-Portal portal.
+    url: https://gportal.jaxa.jp/gpr/?lang=en
+    requests: not documented
+    period: none
+    keyRequired: false
+    registrationRequired: true
+    notes: Registration (no fee) required to download satellite products via G-Portal. Browsing and metadata search available without registration.
+
+  - api: GSMaP FTP Data Service
+    description: Global precipitation data via FTP. No explicit rate limits documented. Password-protected FTP access requires free registration. Near-real-time data updated every 30 minutes.
+    url: https://sharaku.eorc.jaxa.jp/GSMaP/
+    requests: not documented
+    period: none
+    keyRequired: false
+    registrationRequired: true
+    notes: Free FTP registration required. Public JPEG archives at sharaku.eorc.jaxa.jp/GSMaP/archive/jpg/ available without registration.
+
+  - api: AUIG2 ALOS Data Gateway
+    description: Search and ordering system for ALOS/ALOS-2 data. Guest access available for browsing. Authorized user registration required for data ordering. No rate limits documented.
+    url: https://auig2.jaxa.jp/
+    requests: not documented
+    period: none
+    keyRequired: false
+    registrationRequired: true
+    notes: Registration required for ordering. Some high-resolution ALOS products may have commercial pricing through the AW3D standard products.
+
+  - api: Himawari P-Tree FTP Service
+    description: FTP/HTTP-based access to Himawari geostationary satellite products. No rate limits documented. Free registration required.
+    url: https://www.eorc.jaxa.jp/ptree/index.html
+    requests: not documented
+    period: none
+    keyRequired: false
+    registrationRequired: true
+    notes: Free user account required for FTP access to full product archives.

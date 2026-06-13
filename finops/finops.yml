@@ -1,0 +1,45 @@
+finops:
+  summary: JAXA public data APIs are provided free of charge as part of Japan's open data and open science policies. The JAXA Earth API has no fees, no API key costs, and no registration requirements. G-Portal, GSMaP FTP, AUIG2, and Himawari P-Tree services require free user registration but impose no fees for standard Earth observation products.
+
+  pricing:
+    - api: JAXA Earth API
+      model: Free / Open
+      cost: 0
+      currency: USD
+      notes: Completely free with no registration required. Covers 100+ satellite datasets. No documented usage quotas or overage fees.
+
+    - api: G-Portal Satellite Products
+      model: Free with Registration
+      cost: 0
+      currency: USD
+      notes: Standard JAXA Earth observation products (GCOM-W, GCOM-C, ALOS, GSMaP) are free after free user registration. Some specialized or commercial-grade products may have fees — consult G-Portal for current product listings.
+
+    - api: GSMaP Precipitation Data
+      model: Free with Registration
+      cost: 0
+      currency: USD
+      notes: Binary, CSV, and image data available via FTP at no cost after free registration. Public JPEG archives downloadable without registration.
+
+    - api: ALOS World 3D (AW3D) Commercial Products
+      model: Commercial / Tiered
+      cost: varies
+      currency: JPY
+      notes: High-resolution AW3D30 global 3D map products are available free for research. Commercial-grade AW3D Standard products with higher resolution and additional processing may have licensing fees. Contact JAXA for commercial licensing.
+      url: https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d_e.htm
+
+    - api: Himawari P-Tree
+      model: Free with Registration
+      cost: 0
+      currency: USD
+      notes: Himawari-8/9 satellite products via FTP free after registration.
+
+  costOptimization:
+    - Use JAXA Earth API for programmatic access — no registration or API key required, lowest friction entry point.
+    - COG format enables HTTP range requests to fetch only the spatial extent and bands needed, reducing data transfer.
+    - STAC catalog queries allow filtering by date/geography before downloading, avoiding unnecessary full-file retrievals.
+    - For precipitation data, JAXA Earth API provides GSMaP at ~5km resolution; raw FTP registration provides finer-grained binary files if needed.
+    - Cache responses locally for historical/archive queries — data does not change once published.
+
+  dataPolicy:
+    url: https://global.jaxa.jp/about/ip_policy/index_e.html
+    notes: JAXA data is generally available for research, education, and non-commercial use. Commercial use may require licensing. Users must acknowledge JAXA as the data source and cite relevant publications as specified per dataset.

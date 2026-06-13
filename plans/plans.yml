@@ -1,0 +1,21 @@
+plans:
+  - name: Free Open Access
+    description: All JAXA Earth API data and G-Portal satellite products are available free of charge. No API keys, user registration, or subscription fees are required for the JAXA Earth API. G-Portal and GSMaP FTP access require a free user registration for downloads but carry no cost.
+    url: https://data.earth.jaxa.jp/
+    price: 0
+    priceCurrency: USD
+    billingCycle: none
+    features:
+      - Access to 100+ Earth observation datasets via JAXA Earth API
+      - G-Portal satellite product search and download (free registration required)
+      - GSMaP global precipitation data via FTP (free registration required)
+      - ALOS/ALOS-2 data search via AUIG2 (registration for ordering)
+      - Himawari P-Tree FTP data access (free registration required)
+      - Python SDK and JavaScript API for JAXA Earth API
+      - STAC catalog for metadata queries
+      - COG (Cloud Optimized GeoTIFF) data format
+      - No usage quotas documented for JAXA Earth API
+    rateLimit:
+      requests: unlimited
+      period: none
+      notes: No documented rate limits for JAXA Earth API. FTP-based services subject to reasonable use.
