@@ -1,0 +1,147 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dcat": "https://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#"
+  },
+  "@type": "Organization",
+  "@id": "https://www.jaxa.jp/",
+  "name": "Japan Aerospace Exploration Agency (JAXA)",
+  "legalName": "Japan Aerospace Exploration Agency",
+  "description": "Japan Aerospace Exploration Agency (JAXA) provides public APIs and data services for satellite Earth observation data, including GCOM/ALOS satellite imagery, global precipitation mapping, greenhouse gas monitoring, and scientific mission data from Japanese space programs.",
+  "url": "https://global.jaxa.jp/",
+  "logo": "https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "Z-ASIST@ml.jaxa.jp",
+    "contactType": "technical support",
+    "url": "https://earth.jaxa.jp/en/"
+  },
+  "sameAs": [
+    "https://github.com/jaxa",
+    "https://earth.jaxa.jp/en/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "JAXA Earth Observation APIs",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "JAXA Earth API",
+          "description": "Provides access to over 100 Earth observation satellite datasets from JAXA missions including ALOS, GCOM-C, and GCOM-W. Delivers data in Cloud Optimized GeoTIFF (COG) format through a STAC-compatible catalog. Supports Python and JavaScript clients for acquisition, processing, and visualization of satellite imagery covering elevation, surface temperature, vegetation index, precipitation, and land cover.",
+          "url": "https://data.earth.jaxa.jp/",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Researchers, Scientists, Developers"
+          },
+          "serviceType": "REST API",
+          "areaServed": "Global",
+          "additionalType": "https://schema.org/SoftwareApplication"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "G-Portal Web API",
+          "description": "OGC-compliant web services for searching and accessing JAXA Earth observation satellite products from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services for the Web (CSW), Web Map Service (WMS), and Web Coverage Service (WCS).",
+          "url": "https://eolp.jaxa.jp/webapi/",
+          "serviceType": "OGC Web Services (CSW, WMS, WCS)",
+          "areaServed": "Global"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GSMaP Global Rainfall Watch API",
+          "description": "Provides global satellite-based precipitation estimates through the Global Satellite Mapping of Precipitation (GSMaP) product. Delivers near-real-time and archive rainfall rate data at 0.1-degree resolution updated every 30 minutes.",
+          "url": "https://sharaku.eorc.jaxa.jp/GSMaP/",
+          "serviceType": "Data Service (FTP/HTTP)",
+          "areaServed": "Global",
+          "temporalCoverage": "2000-03-01/.."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "ALOS User Interface Gateway 2 (AUIG2)",
+          "description": "Online search and ordering system for ALOS and ALOS-2 synthetic aperture radar and optical observation data.",
+          "url": "https://auig2.jaxa.jp/",
+          "serviceType": "Data Portal"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "JAXA Himawari P-Tree Data Service",
+          "description": "Provides near-real-time and archive access to Himawari geostationary meteorological satellite imagery and derived products via FTP.",
+          "url": "https://www.eorc.jaxa.jp/ptree/index.html",
+          "serviceType": "Data Service (FTP/HTTP)"
+        }
+      }
+    ]
+  },
+  "subjectOf": [
+    {
+      "@type": "Dataset",
+      "name": "GCOM-C (SGLI) - Satellite Data",
+      "description": "Global Change Observation Mission - Climate satellite data including land surface temperature, sea surface temperature, and in-water properties at 250m resolution.",
+      "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": "https://gportal.jaxa.jp/gpr/?lang=en",
+        "encodingFormat": "GeoTIFF"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GCOM-W (AMSR2) - Satellite Data",
+      "description": "Global Change Observation Mission - Water satellite data including sea ice concentration, soil moisture, and precipitation.",
+      "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": "https://gportal.jaxa.jp/gpr/?lang=en",
+        "encodingFormat": "GeoTIFF"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GSMaP - Global Satellite Mapping of Precipitation",
+      "description": "Near-real-time and archive global precipitation data at 0.1-degree resolution updated every 30 minutes.",
+      "temporalCoverage": "2000-03-01/..",
+      "spatialCoverage": {
+        "@type": "Place",
+        "geo": {
+          "@type": "GeoShape",
+          "box": "-60 -180 60 180"
+        }
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://sharaku.eorc.jaxa.jp/GSMaP/",
+          "encodingFormat": "binary"
+        },
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://sharaku.eorc.jaxa.jp/GSMaP/",
+          "encodingFormat": "text/csv"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "name": "ALOS/ALOS-2 - Advanced Land Observing Satellite Data",
+      "description": "Synthetic aperture radar (SAR) and optical observation data from ALOS and ALOS-2 satellites.",
+      "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": "https://auig2.jaxa.jp/",
+        "encodingFormat": "GeoTIFF"
+      }
+    }
+  ]
+}
