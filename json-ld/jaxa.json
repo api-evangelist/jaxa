@@ -11,7 +11,7 @@
   "legalName": "Japan Aerospace Exploration Agency",
   "description": "Japan Aerospace Exploration Agency (JAXA) provides public APIs and data services for satellite Earth observation data, including GCOM/ALOS satellite imagery, global precipitation mapping, greenhouse gas monitoring, and scientific mission data from Japanese space programs.",
   "url": "https://global.jaxa.jp/",
-  "logo": "https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+  "logo": "https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg",
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "Z-ASIST@ml.jaxa.jp",

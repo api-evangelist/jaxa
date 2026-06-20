@@ -1,6 +1,6 @@
 name: JAXA
 description: Japan Aerospace Exploration Agency (JAXA) provides public APIs and data services for satellite Earth observation data, including GCOM/ALOS satellite imagery, global precipitation mapping, greenhouse gas monitoring, and scientific mission data from Japanese space programs.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/jaxa/refs/heads/main/apis.yml
 version: "0.19"
 created: "2026-06-13"
@@ -23,7 +23,7 @@ apis:
 
   - name: JAXA Earth API
     description: Provides access to over 100 Earth observation satellite datasets from JAXA missions including ALOS, GCOM-C, and GCOM-W. Delivers data in Cloud Optimized GeoTIFF (COG) format through a STAC-compatible catalog. Supports Python and JavaScript clients for acquisition, processing, and visualization of satellite imagery covering elevation, surface temperature, vegetation index, precipitation, and land cover.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://data.earth.jaxa.jp/
     baseURL: https://data.earth.jaxa.jp/
     tags:
@@ -50,7 +50,7 @@ apis:
 
   - name: G-Portal Web API
     description: OGC-compliant web services for searching and accessing JAXA Earth observation satellite products from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services for the Web (CSW) for data search, Web Map Service (WMS) for image rendering, and Web Coverage Service (WCS) for raw coverage data retrieval. Free registration required for data downloads.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://gportal.jaxa.jp/gpr/?lang=en
     baseURL: https://eolp.jaxa.jp/webapi/
     tags:
@@ -75,7 +75,7 @@ apis:
 
   - name: GSMaP Global Rainfall Watch API
     description: Provides global satellite-based precipitation estimates through the Global Satellite Mapping of Precipitation (GSMaP) product. Delivers near-real-time and archive rainfall rate data at 0.1-degree resolution updated every 30 minutes. Data available in binary, CSV, and JPEG formats via FTP access (registration required) and through the JAXA Earth API. Coverage spans 60N to 60S from March 2000 to present.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://sharaku.eorc.jaxa.jp/GSMaP/
     baseURL: https://sharaku.eorc.jaxa.jp/GSMaP/
     tags:
@@ -96,7 +96,7 @@ apis:
 
   - name: ALOS User Interface Gateway 2 (AUIG2)
     description: Online search and ordering system for ALOS and ALOS-2 synthetic aperture radar and optical observation data. Authorized users can search observation archives, review observation plans, and order standard and high-resolution products from the Advanced Land Observing Satellite series. Guest access available for browsing observation metadata; full product access requires registration.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://auig2.jaxa.jp/
     baseURL: https://auig2.jaxa.jp/
     tags:
@@ -117,7 +117,7 @@ apis:
 
   - name: JAXA Himawari P-Tree Data Service
     description: Provides near-real-time and archive access to Himawari geostationary meteorological satellite imagery and derived products. Data accessible via FTP from the P-Tree (Public ftp/http-based data TREe) server operated by JAXA EORC. Products include full-disk imagery, cloud properties, aerosol optical depth, and atmospheric motion vectors. Free registration required for FTP access.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.eorc.jaxa.jp/ptree/index.html
     baseURL: https://www.eorc.jaxa.jp/ptree/
     tags:
