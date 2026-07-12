@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: earth.jaxa.jp
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 21 05:04:18 2026 GMT
+  hsts: false
+- host: data.earth.jaxa.jp
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 11 01:58:30 2026 GMT
+  hsts: false
+- host: gportal.jaxa.jp
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 21 05:04:18 2026 GMT
+  hsts: false
+domains:
+- domain: jaxa.jp
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

@@ -135,6 +135,8 @@ apis:
         url: https://earth.jaxa.jp/en/
 
 common:
+  - type: DomainSecurity
+    url: security/jaxa-domain-security.yml
   - type: Portal
     url: https://earth.jaxa.jp/en/
   - type: GitHub
