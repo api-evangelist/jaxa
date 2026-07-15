@@ -135,6 +135,8 @@ apis:
         url: https://earth.jaxa.jp/en/
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/jaxa-agentic-access.yml
   - type: DomainSecurity
     url: security/jaxa-domain-security.yml
   - type: Portal
