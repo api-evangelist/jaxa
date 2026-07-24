@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  title: G-Portal Web CSW WMS API
+  description: OGC-compliant web services for searching and accessing JAXA Earth observation satellite products from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services for the Web (CSW) for data search, Web Map Service (WMS) for image rendering, and Web Coverage Service (WCS) for raw coverage data retrieval.
+  version: 1.0.0
+  contact:
+    name: JAXA Satellite Applications and Operations Center
+    url: https://gportal.jaxa.jp/gpr/information/support?lang=en
+  license:
+    name: JAXA Intellectual Property Policy
+    url: https://global.jaxa.jp/about/ip_policy/index_e.html
+servers:
+- url: https://gpwos1.jaxa.jp
+  description: CSW Collection Search server
+- url: https://gportal.jaxa.jp
+  description: CSW Granule Search server
+- url: https://gpwmap.jaxa.jp
+  description: WMS and WCS map server
+tags:
+- name: WMS
+  description: Web Map Service - retrieve map imagery from satellite datasets
+paths:
+  /ows:
+    get:
+      tags:
+      - WMS
+      summary: OGC Web Services endpoint
+      description: Unified OGC endpoint supporting Web Map Service (WMS) and Web Coverage Service (WCS) operations. The operation performed depends on the 'service' and 'request' parameters.
+      operationId: owsRequest
+      parameters:
+      - name: service
+        in: query
+        required: true
+        description: OGC service type
+        schema:
+          type: string
+          enum:
+          - WMS
+          - WCS
+      - name: request
+        in: query
+        required: true
+        description: Operation to perform
+        schema:
+          type: string
+          enum:
+          - GetCapabilities
+          - GetMap
+          - GetFeatureInfo
+          - GetLegendGraphic
+          - GetCoverage
+      - name: version
+        in: query
+        required: false
+        description: 'Service version (WMS: 1.1.1 or 1.3.0; WCS: 1.0.0 or 2.0.1)'
+        schema:
+          type: string
+          enum:
+          - 1.1.1
+          - 1.3.0
+          - 1.0.0
+          - 2.0.1
+      - name: layers
+        in: query
+        required: false
+        description: Layer name(s) for WMS GetMap and GetFeatureInfo requests
+        schema:
+          type: string
+          example: GCOM-C_LST250m
+      - name: bbox
+        in: query
+        required: false
+        description: Bounding box for spatial extent in format minX,minY,maxX,maxY
+        schema:
+          type: string
+          example: 130,30,145,45
+      - name: width
+        in: query
+        required: false
+        description: Output image width in pixels
+        schema:
+          type: integer
+          example: 256
+      - name: height
+        in: query
+        required: false
+        description: Output image height in pixels
+        schema:
+          type: integer
+          example: 256
+      - name: format
+        in: query
+        required: false
+        description: Output format for map or coverage
+        schema:
+          type: string
+          enum:
+          - image/png
+          - GeoTIFF
+          default: image/png
+      - name: crs
+        in: query
+        required: false
+        description: Coordinate reference system (WMS 1.3.0)
+        schema:
+          type: string
+          enum:
+          - EPSG:4326
+          - CRS:84
+          - EPSG:3411
+      - name: srs
+        in: query
+        required: false
+        description: Spatial reference system (WMS 1.1.1 equivalent of crs)
+        schema:
+          type: string
+          enum:
+          - EPSG:4326
+          - CRS:84
+      - name: time
+        in: query
+        required: false
+        description: Temporal dimension filter in ISO 8601 format. Omitting returns most recent data.
+        schema:
+          type: string
+          format: date-time
+          example: '2023-01-15T00:00:00Z'
+      - name: styles
+        in: query
+        required: false
+        description: Style name for rendering. Use empty string for default.
+        schema:
+          type: string
+      - name: coverage
+        in: query
+        required: false
+        description: Coverage identifier for WCS 1.0.0 GetCoverage
+        schema:
+          type: string
+      - name: coverageId
+        in: query
+        required: false
+        description: Coverage identifier for WCS 2.0.1 GetCoverage
+        schema:
+          type: string
+      - name: subset
+        in: query
+        required: false
+        description: Subset specification for WCS 2.0.1 (e.g. Long(130,145), Lat(30,45), time(2023-01-15T00:00:00Z))
+        schema:
+          type: string
+      - name: query_layers
+        in: query
+        required: false
+        description: Layers to query for WMS GetFeatureInfo
+        schema:
+          type: string
+      - name: X
+        in: query
+        required: false
+        description: Pixel X coordinate for WMS GetFeatureInfo
+        schema:
+          type: integer
+      - name: Y
+        in: query
+        required: false
+        description: Pixel Y coordinate for WMS GetFeatureInfo
+        schema:
+          type: integer
+      - name: info_format
+        in: query
+        required: false
+        description: Response format for WMS GetFeatureInfo
+        schema:
+          type: string
+          enum:
+          - text/plain
+          - text/html
+          - application/json
+      - name: feature_count
+        in: query
+        required: false
+        description: Maximum number of features to return for GetFeatureInfo
+        schema:
+          type: integer
+          default: 1
+      - name: layer
+        in: query
+        required: false
+        description: Single layer name for WMS GetLegendGraphic
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful OGC service response
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+                description: Map image (WMS GetMap or GetLegendGraphic)
+            application/xml:
+              schema:
+                type: string
+                description: Capabilities XML or GML response
+            application/json:
+              schema:
+                type: object
+                description: Feature info response in JSON format
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                description: GeoTIFF coverage data (WCS GetCoverage)
+externalDocs:
+  description: G-Portal Web API Documentation
+  url: https://eolp.jaxa.jp/webapi/

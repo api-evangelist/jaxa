@@ -1,0 +1,189 @@
+openapi: 3.0.3
+info:
+  title: G-Portal Web CSW API
+  description: OGC-compliant web services for searching and accessing JAXA Earth observation satellite products from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services for the Web (CSW) for data search, Web Map Service (WMS) for image rendering, and Web Coverage Service (WCS) for raw coverage data retrieval.
+  version: 1.0.0
+  contact:
+    name: JAXA Satellite Applications and Operations Center
+    url: https://gportal.jaxa.jp/gpr/information/support?lang=en
+  license:
+    name: JAXA Intellectual Property Policy
+    url: https://global.jaxa.jp/about/ip_policy/index_e.html
+servers:
+- url: https://gpwos1.jaxa.jp
+  description: CSW Collection Search server
+- url: https://gportal.jaxa.jp
+  description: CSW Granule Search server
+- url: https://gpwmap.jaxa.jp
+  description: WMS and WCS map server
+tags:
+- name: CSW
+  description: Catalog Services for the Web - search satellite observation collections and granules
+paths:
+  /examind/api/WS/csw/preview/opensearch:
+    get:
+      tags:
+      - CSW
+      summary: Search satellite data collections
+      description: Performs an OpenSearch-based CSW collection search against JAXA satellite data holdings. Returns matching dataset collections based on text, spatial, and temporal filters.
+      operationId: searchCollections
+      parameters:
+      - name: service
+        in: query
+        required: true
+        description: OGC service type
+        schema:
+          type: string
+          enum:
+          - CSW
+      - name: version
+        in: query
+        required: true
+        description: CSW protocol version
+        schema:
+          type: string
+          enum:
+          - 3.0.0
+      - name: q
+        in: query
+        required: true
+        description: Free-text search query for collection titles, abstracts, or keywords
+        schema:
+          type: string
+      - name: bbox
+        in: query
+        required: false
+        description: Bounding box spatial filter in format minLon,minLat,maxLon,maxLat
+        schema:
+          type: string
+          example: 130,30,145,45
+      - name: startDate
+        in: query
+        required: false
+        description: Start of temporal filter range (ISO 8601 format)
+        schema:
+          type: string
+          format: date-time
+      - name: endDate
+        in: query
+        required: false
+        description: End of temporal filter range (ISO 8601 format)
+        schema:
+          type: string
+          format: date-time
+      - name: maxRecords
+        in: query
+        required: false
+        description: Maximum number of records to return
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+      - name: startPosition
+        in: query
+        required: false
+        description: Starting position for pagination (1-based)
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+      responses:
+        '200':
+          description: Successful collection search results
+          content:
+            application/atom+xml:
+              schema:
+                type: string
+                description: Atom feed containing matching collection records
+            application/xml:
+              schema:
+                type: string
+                description: XML response containing matching collection records
+  /csw/csw:
+    get:
+      tags:
+      - CSW
+      summary: Search satellite data granules
+      description: Performs a CSW GetRecords request to search for individual satellite observation granules. Supports filtering by dataset, spatial extent, time range, and acquisition parameters.
+      operationId: searchGranules
+      parameters:
+      - name: service
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - CSW
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - 3.0.0
+      - name: request
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - GetRecords
+      - name: bbox
+        in: query
+        required: false
+        description: Spatial bounding box filter in format minLon,minLat,maxLon,maxLat
+        schema:
+          type: string
+          example: 130,30,145,45
+      - name: startDate
+        in: query
+        required: false
+        description: Temporal filter start date (ISO 8601)
+        schema:
+          type: string
+          format: date-time
+      - name: endDate
+        in: query
+        required: false
+        description: Temporal filter end date (ISO 8601)
+        schema:
+          type: string
+          format: date-time
+      - name: outputSchema
+        in: query
+        required: false
+        description: Metadata output schema
+        schema:
+          type: string
+          enum:
+          - http://www.isotc211.org/2005/gmd
+          - http://www.opengis.net/cat/csw/3.0
+          - http://www.opengis.net/cat/csw/2.0.2
+          - http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/
+      - name: maxRecords
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 10
+      - name: startPosition
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+      responses:
+        '200':
+          description: Successful granule search results
+          content:
+            application/xml:
+              schema:
+                type: string
+                description: CSW GetRecords response XML with matching granule metadata
+            application/atom+xml:
+              schema:
+                type: string
+                description: Atom feed response with matching granule metadata
+externalDocs:
+  description: G-Portal Web API Documentation
+  url: https://eolp.jaxa.jp/webapi/
