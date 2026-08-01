@@ -1,0 +1,18 @@
+{
+  "provider": "jaxa",
+  "sources": [
+    "jaxa-csw-api-openapi.yml",
+    "jaxa-wcs-api-openapi.yml",
+    "jaxa-wms-api-openapi.yml"
+  ],
+  "outputs": [
+    "jaxa-csw-api-openapi.yml",
+    "jaxa-wcs-api-openapi.yml",
+    "jaxa-wms-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
