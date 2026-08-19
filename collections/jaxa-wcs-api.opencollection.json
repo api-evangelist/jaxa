@@ -1,0 +1,157 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "G-Portal Web CSW WCS API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "WCS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OGC Web Services endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gpwos1.jaxa.jp/ows",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "query",
+                "description": "OGC service type"
+              },
+              {
+                "name": "request",
+                "value": "",
+                "type": "query",
+                "description": "Operation to perform"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Service version (WMS: 1.1.1 or 1.3.0; WCS: 1.0.0 or 2.0.1)"
+              },
+              {
+                "name": "layers",
+                "value": "",
+                "type": "query",
+                "description": "Layer name(s) for WMS GetMap and GetFeatureInfo requests"
+              },
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "Bounding box for spatial extent in format minX,minY,maxX,maxY"
+              },
+              {
+                "name": "width",
+                "value": "",
+                "type": "query",
+                "description": "Output image width in pixels"
+              },
+              {
+                "name": "height",
+                "value": "",
+                "type": "query",
+                "description": "Output image height in pixels"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Output format for map or coverage"
+              },
+              {
+                "name": "crs",
+                "value": "",
+                "type": "query",
+                "description": "Coordinate reference system (WMS 1.3.0)"
+              },
+              {
+                "name": "srs",
+                "value": "",
+                "type": "query",
+                "description": "Spatial reference system (WMS 1.1.1 equivalent of crs)"
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Temporal dimension filter in ISO 8601 format. Omitting returns most recent data."
+              },
+              {
+                "name": "styles",
+                "value": "",
+                "type": "query",
+                "description": "Style name for rendering. Use empty string for default."
+              },
+              {
+                "name": "coverage",
+                "value": "",
+                "type": "query",
+                "description": "Coverage identifier for WCS 1.0.0 GetCoverage"
+              },
+              {
+                "name": "coverageId",
+                "value": "",
+                "type": "query",
+                "description": "Coverage identifier for WCS 2.0.1 GetCoverage"
+              },
+              {
+                "name": "subset",
+                "value": "",
+                "type": "query",
+                "description": "Subset specification for WCS 2.0.1 (e.g. Long(130,145), Lat(30,45), time(2023-01-15T00:00:00Z))"
+              },
+              {
+                "name": "query_layers",
+                "value": "",
+                "type": "query",
+                "description": "Layers to query for WMS GetFeatureInfo"
+              },
+              {
+                "name": "X",
+                "value": "",
+                "type": "query",
+                "description": "Pixel X coordinate for WMS GetFeatureInfo"
+              },
+              {
+                "name": "Y",
+                "value": "",
+                "type": "query",
+                "description": "Pixel Y coordinate for WMS GetFeatureInfo"
+              },
+              {
+                "name": "info_format",
+                "value": "",
+                "type": "query",
+                "description": "Response format for WMS GetFeatureInfo"
+              },
+              {
+                "name": "feature_count",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of features to return for GetFeatureInfo"
+              },
+              {
+                "name": "layer",
+                "value": "",
+                "type": "query",
+                "description": "Single layer name for WMS GetLegendGraphic"
+              }
+            ]
+          },
+          "docs": "Unified OGC endpoint supporting Web Map Service (WMS) and Web Coverage Service (WCS) operations. The operation performed depends on the 'service' and 'request' parameters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

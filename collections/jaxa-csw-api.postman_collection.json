@@ -1,0 +1,356 @@
+{
+  "item": [
+    {
+      "id": "071724bb-4004-43fb-9f3d-c54185dbb951",
+      "name": "CSW",
+      "description": {
+        "content": "Catalog Services for the Web - search satellite observation collections and granules",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "086cd2cf-a5c1-49ba-89b6-9b3212750e21",
+          "name": "Search satellite data collections",
+          "request": {
+            "name": "Search satellite data collections",
+            "description": {
+              "content": "Performs an OpenSearch-based CSW collection search against JAXA satellite data holdings. Returns matching dataset collections based on text, spatial, and temporal filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "examind",
+                "api",
+                "WS",
+                "csw",
+                "preview",
+                "opensearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "service",
+                  "value": "<string>",
+                  "description": "(Required) OGC service type"
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) CSW protocol version"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "(Required) Free-text search query for collection titles, abstracts, or keywords"
+                },
+                {
+                  "disabled": false,
+                  "key": "bbox",
+                  "value": "<string>",
+                  "description": "Bounding box spatial filter in format minLon,minLat,maxLon,maxLat"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<dateTime>",
+                  "description": "Start of temporal filter range (ISO 8601 format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<dateTime>",
+                  "description": "End of temporal filter range (ISO 8601 format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxRecords",
+                  "value": "10",
+                  "description": "Maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "startPosition",
+                  "value": "1",
+                  "description": "Starting position for pagination (1-based)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/atom+xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbb17a34-34c7-47d9-8291-17a28e613966",
+              "name": "Successful collection search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "examind",
+                    "api",
+                    "WS",
+                    "csw",
+                    "preview",
+                    "opensearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bbox",
+                      "value": "130,30,145,45"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "maxRecords",
+                      "value": "10"
+                    },
+                    {
+                      "key": "startPosition",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/atom+xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fb60638-9823-4c33-9f1d-5b1855b5db08",
+          "name": "Search satellite data granules",
+          "request": {
+            "name": "Search satellite data granules",
+            "description": {
+              "content": "Performs a CSW GetRecords request to search for individual satellite observation granules. Supports filtering by dataset, spatial extent, time range, and acquisition parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "csw",
+                "csw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "service",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "request",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "bbox",
+                  "value": "<string>",
+                  "description": "Spatial bounding box filter in format minLon,minLat,maxLon,maxLat"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<dateTime>",
+                  "description": "Temporal filter start date (ISO 8601)"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<dateTime>",
+                  "description": "Temporal filter end date (ISO 8601)"
+                },
+                {
+                  "disabled": false,
+                  "key": "outputSchema",
+                  "value": "<string>",
+                  "description": "Metadata output schema"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxRecords",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "startPosition",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc955a4c-f31b-4ef5-9f2f-764581087120",
+              "name": "Successful granule search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "csw",
+                    "csw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "request",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bbox",
+                      "value": "130,30,145,45"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "outputSchema",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxRecords",
+                      "value": "10"
+                    },
+                    {
+                      "key": "startPosition",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/atom+xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://gpwos1.jaxa.jp",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8dfa1d52-7d88-490a-abd8-802c4449a59f",
+    "name": "G-Portal Web CSW API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OGC-compliant web services for searching and accessing JAXA Earth observation satellite products from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services for the Web (CSW) for data search, Web Map Service (WMS) for image rendering, and Web Coverage Service (WCS) for raw coverage data retrieval.\n\nContact Support:\n Name: JAXA Satellite Applications and Operations Center",
+      "type": "text/plain"
+    }
+  }
+}
