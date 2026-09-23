@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: G-Portal Web CSW API
   description: OGC-compliant web services for searching and accessing JAXA Earth observation satellite products from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services for the Web (CSW) for data search, Web Map Service (WMS) for image rendering, and Web Coverage Service (WCS) for raw coverage data retrieval.
