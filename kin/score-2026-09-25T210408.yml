@@ -1,22 +1,20 @@
-# Kin Score artifact — jaxa — 2026-08-28T221322
+# Kin Score artifact — jaxa — 2026-09-25T210408
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: jaxa
-  schema_version: 0.15.1
-  scored_at: '2026-08-28'
-  run_ts: 2026-08-28T221322
-  composite: 31.0
+  schema_version: 0.23.0
+  scored_at: '2026-09-25'
+  run_ts: 2026-09-25T210408
+  composite: 28.7
   band: thin
   facets:
-    discoverability: 74.1
-    contract_quality: 48.3
-    governance: 0.0
+    discoverability: 66.1
+    contract_quality: 43.5
+    contract_governance: 0.0
     operational_transparency: 5.3
     developer_ergonomics: 19.0
-    commercial_clarity: 39.5
-    contract_governance: 0.0
-    access_clarity: 39.5
+    access_clarity: 37.4
   agent_readiness:
     score: 20.0
     band: agent-aware
@@ -44,7 +42,7 @@ kin_score:
     applies: true
     regime: Energy & Utilities
     regime_id: energy_utilities
-    score: 13.5
+    score: 8.2
     matched_via: tags
   provenance:
     agentic_access: derived
