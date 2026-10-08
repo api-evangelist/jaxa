@@ -23,3 +23,16 @@ plans:
       requests: unlimited
       period: none
       notes: No documented rate limits for JAXA Earth API. FTP-based services subject to reasonable use.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Free Open Access
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
