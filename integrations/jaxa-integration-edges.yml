@@ -1,0 +1,51 @@
+edges:
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: shape-anchor
+  type: contract
+  direction: provider-built
+  channel: provider-built
+  relationship: compatible
+  shape: ogc-wms
+  evidence_kind: own-contract
+  evidence: https://github.com/api-evangelist/jaxa/blob/main/openapi/jaxa-csw-api-openapi.yml#L4
+  degree: declared-unqualified
+  quote: 'description: OGC-compliant web services for searching and accessing JAXA Earth observation satellite products
+    from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services
+    for the Web (CS'
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: shape-anchor
+  type: contract
+  direction: provider-built
+  channel: provider-built
+  relationship: compatible
+  shape: ogc-wcs
+  evidence_kind: own-contract
+  evidence: https://github.com/api-evangelist/jaxa/blob/main/openapi/jaxa-csw-api-openapi.yml#L4
+  degree: declared-unqualified
+  quote: 'description: OGC-compliant web services for searching and accessing JAXA Earth observation satellite products
+    from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services
+    for the Web (CS'
+- partner_name: Open Geospatial Consortium
+  partner: ogc
+  detected_by: sweep-geospatial.py
+  first_seen: '2026-10-14'
+  partner_match: shape-anchor
+  type: contract
+  direction: provider-built
+  channel: provider-built
+  relationship: compatible
+  shape: ogc-csw
+  evidence_kind: own-contract
+  evidence: https://github.com/api-evangelist/jaxa/blob/main/openapi/jaxa-csw-api-openapi.yml#L4
+  degree: declared-unqualified
+  quote: 'description: OGC-compliant web services for searching and accessing JAXA Earth observation satellite products
+    from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and GSMaP precipitation products. Provides Catalog Services
+    for the Web (CS'
+generated: '2026-10-14'
+method: searched
