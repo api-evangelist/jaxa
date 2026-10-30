@@ -1,4 +1,4 @@
-# JAXA - APIs.json Provider Profile
+# JAXA
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,26 +64,123 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Japan Aerospace Exploration Agency (JAXA) public API catalog for Earth observation satellite data, global precipitation mapping, greenhouse gas monitoring, and scientific mission data.
+Japan Aerospace Exploration Agency (JAXA) provides public APIs and data services for satellite Earth observation data, including GCOM/ALOS satellite imagery, global precipitation mapping, greenhouse gas monitoring, and scientific mission data from Japanese space programs.
 
-## APIs
+**Areas:** Space · Satellite · Earth Observation · Remote Sensing · Geospatial · Climate · Environment · Precipitation · Greenhouse Gas · Japan
 
-- **JAXA Earth API** - 100+ satellite datasets (ALOS, GCOM-C, GCOM-W) via STAC/COG, Python/JS SDK, no auth required
-- **G-Portal Web API** - OGC CSW/WMS/WCS services for GCOM, ALOS, and GSMaP products (free registration)
-- **GSMaP Global Rainfall Watch** - Near-realtime and archive global precipitation at 0.1-degree resolution via FTP
-- **AUIG2 ALOS Gateway** - Search and order ALOS/ALOS-2 SAR and optical imagery
-- **Himawari P-Tree** - Geostationary meteorological satellite products via FTP
+## JAXA on APIs.io
 
-## Access
+Everything profiled for JAXA is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/jaxa/](https://apis.io/providers/jaxa/)** — or go straight to one of the APIs or properties below.
 
-Most JAXA data is free. The JAXA Earth API requires no registration. G-Portal, GSMaP FTP, and Himawari P-Tree require a free user account.
+### APIs (8)
 
-- Portal: https://earth.jaxa.jp/en/
-- JAXA Earth API: https://data.earth.jaxa.jp/
-- G-Portal: https://gportal.jaxa.jp/gpr/?lang=en
-- GitHub: https://github.com/jaxa
+- [JAXA Earth API](https://apis.io/apis/jaxa/jaxa-earth-api/) — Provides access to over 100 Earth observation satellite datasets from JAXA missions including ALOS, GCOM-C, and GCOM-W. Delivers data in Cloud Optimized…
+- [G-Portal Web API](https://apis.io/apis/jaxa/g-portal-web-api/) — OGC-compliant web services for searching and accessing JAXA Earth observation satellite products from missions including GCOM-W (AMSR2), GCOM-C (SGLI), and…
+- [GSMaP Global Rainfall Watch API](https://apis.io/apis/jaxa/gsmap-global-rainfall-watch-api/) — Provides global satellite-based precipitation estimates through the Global Satellite Mapping of Precipitation (GSMaP) product. Delivers near-real-time and…
+- [ALOS User Interface Gateway 2 (AUIG2)](https://apis.io/apis/jaxa/alos-user-interface-gateway-2-auig2/) — Online search and ordering system for ALOS and ALOS-2 synthetic aperture radar and optical observation data. Authorized users can search observation…
+- [JAXA Himawari P-Tree Data Service](https://apis.io/apis/jaxa/jaxa-himawari-p-tree-data-service/) — Provides near-real-time and archive access to Himawari geostationary meteorological satellite imagery and derived products. Data accessible via FTP from the…
+- [JAXA CSW API](https://apis.io/apis/jaxa/jaxa-csw-api/) — Catalog Services for the Web - search satellite observation collections and granules
+- [JAXA WCS API](https://apis.io/apis/jaxa/jaxa-wcs-api/) — Web Coverage Service - retrieve raw coverage/raster data from satellite datasets
+- [JAXA WMS API](https://apis.io/apis/jaxa/jaxa-wms-api/) — Web Map Service - retrieve map imagery from satellite datasets
 
-## Profile
+### Published properties
 
-- **APIs.json Version:** 0.19
-- **Maintained by:** [API Evangelist](https://apievangelist.com)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Jaxa Agentic Access](https://apis.io/agentic-access/jaxa/jaxa-agentic-access/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [G-Portal Web CSW API](https://apis.io/collections/jaxa/open-jaxa-csw-api/)
+- [G-Portal Web CSW WCS API](https://apis.io/collections/jaxa/open-jaxa-wcs-api/)
+- [G-Portal Web CSW WMS API](https://apis.io/collections/jaxa/open-jaxa-wms-api/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Jaxa Domain Security](https://apis.io/security/jaxa/jaxa-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/jaxa/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/jaxa/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/jaxa/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://jaxa.jp)
+- [Privacy policy](https://global.jaxa.jp/policy.html)
+
+## API Evangelist rating
+
+**Kin Score 24.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 43.5 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 15.8 |
+
+**Agent readiness 20.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 8.2** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/jaxa/](https://apis.io/providers/jaxa/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for JAXA: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/jaxa/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
